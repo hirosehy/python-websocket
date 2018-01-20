@@ -1,0 +1,8 @@
+<div id="display"></div>
+
+<script>
+    var connection = new WebSocket('ws://IPAddress:8080/socket');
+    connection.onmessage = function (e) {
+        document.getElementById("display").textContent = JSON.parse(e.data)["data1"];
+    };
+</script>
